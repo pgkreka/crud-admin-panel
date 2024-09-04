@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid';
 
 const Users = () => {
   const [userList, setUserList] = useState([]);
-  const [selectedUser, setSelectedUser] = useState<any>(null); // New state for the selected user
+  const [selectedUser, setSelectedUser] = useState<any>(null);
 
 
   useEffect(() => {
@@ -52,12 +52,6 @@ const Users = () => {
               <h2>Contact List</h2>
             </Box>
             <Table>
-              <TableHead className="row-header">
-                <TableRow>
-                  <TableCell align="left">Name</TableCell>
-                  <TableCell align="left">Email</TableCell>
-                </TableRow>
-              </TableHead>
               <TableBody>
                 {userList.map((user: any, selectedUser: any) => (
                   <TableRow
@@ -71,6 +65,7 @@ const Users = () => {
                       cursor: "pointer",
                     }}
                   >
+                    {/* <TableCell align="left">{user.photo}</TableCell> */}
                     <TableCell align="left">{user.name}</TableCell>
                     <TableCell align="left">{user.email}</TableCell>
                   </TableRow>
@@ -93,14 +88,6 @@ const Users = () => {
                       <TableCell align="left">{selectedUser.name}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell align="left">Surname:</TableCell>
-                      <TableCell align="left">{selectedUser.surname}</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell align="left">Username:</TableCell>
-                      <TableCell align="left">{selectedUser.username}</TableCell>
-                    </TableRow>
-                    <TableRow>
                       <TableCell align="left">Email:</TableCell>
                       <TableCell align="left">{selectedUser.email}</TableCell>
                     </TableRow>
@@ -115,12 +102,6 @@ const Users = () => {
                     <TableRow>
                       <TableCell align="left">Company:</TableCell>
                       <TableCell align="left">{selectedUser.company}</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell align="left">Avatar:</TableCell>
-                      <TableCell align="left">
-                        <Avatar src={selectedUser.avatar} />
-                      </TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
